@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct ListItemView: View {
-    let title: String
+    let item: ListItemModel
     var body: some View {
         HStack {
-            Text(title)
+            Text(item.title)
             Spacer()
-            Image(systemName: "checkmark.circle")
+            Image(systemName: item.isCompleted ? "checkmark.circle.fill" : "circle")
         }
     }
 }
 
 struct ListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ListItemView(title: "Hello")
+            ListItemView(item: ListItemModel(title: "Hello", isCompleted: true))
             
     }
 }

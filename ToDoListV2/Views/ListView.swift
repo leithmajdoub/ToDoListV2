@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct ListView: View {
-    @State var items: [String] = [
-        "Code an IOS app",
-        "Read",
-        "Padel training"
+    @State var items: [ListItemModel] = [
+        ListItemModel(title: "Code an IOS app", isCompleted: true),
+        ListItemModel(title: "Read", isCompleted: false),
+        ListItemModel(title: "Padel training", isCompleted: false)
     ]
     var body: some View {
         List {
-            ForEach(items, id: \.self) { item in
-                ListItemView(title: item)
+            ForEach(items) { item in
+                ListItemView(item: item)
             }
+            .onTapGesture {
+//                item.isCompleted.toggle()
+            }
+            
         }
         .navigationTitle("Todo List 📓")
         .toolbar {
