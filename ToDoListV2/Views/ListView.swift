@@ -8,33 +8,35 @@
 import SwiftUI
 
 struct ListView: View {
-    @State var items: [ListItemModel] = [
-        ListItemModel(title: "Code an IOS app", isCompleted: true),
-        ListItemModel(title: "Read", isCompleted: false),
-        ListItemModel(title: "Padel training", isCompleted: false)
-    ]
+    @EnvironmentObject var listViewModel: ListViewModel
     var body: some View {
-        List {
-            ForEach(items) { item in
-                ListItemView(item: item)
-            }
-            .onTapGesture {
-//                item.isCompleted.toggle()
+        ZStack{
+            if listViewModel.items.isEmpty{
+                Text("No tasks yet!")
+            }else {
+                List {
+                    ForEach(listViewModel.items) { item in
+                        ListItemView(item: item)
+                            .onTapGesture {
+                                withAnimation(.spring()){
+                                    listViewModel.updateItem(item: item)
+                                }
+                            }
+                    }
+                    .onDelete(perform: listViewModel.deleteItem)
+                    .onMove(perform: listViewModel.moveItem)
+                }
             }
             
         }
         .navigationTitle("Todo List 📓")
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink("Edit", destination: AddView())
+                EditButton()
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink("Add", destination: Text("Add"))
+                NavigationLink("Add", destination: AddView())
             }
-            
-//            Image(systemName: "plus.circle")
-//            Image(systemName: "arrowshape.turn.up.backward")
-                
         }
     }
 }
@@ -44,6 +46,7 @@ struct ListView_Previews: PreviewProvider {
         NavigationView {
             ListView()
         }
+        .environmentObject(ListViewModel())
     }
 }
 

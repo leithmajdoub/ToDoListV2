@@ -15,6 +15,9 @@ struct ListItemView: View {
             Spacer()
             Image(systemName: item.isCompleted ? "checkmark.circle.fill" : "circle")
         }
+//        .onTapGesture {
+//            item.isCompleted.toggle()
+//        }
     }
 }
 
