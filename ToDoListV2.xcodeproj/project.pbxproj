@@ -8,17 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		0490836A290935130020474C /* ToDoListV2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04908369290935130020474C /* ToDoListV2App.swift */; };
-		0490836C290935130020474C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490836B290935130020474C /* ContentView.swift */; };
 		0490836E290935140020474C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0490836D290935140020474C /* Assets.xcassets */; };
 		04908371290935140020474C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04908370290935140020474C /* Preview Assets.xcassets */; };
+		0490837B290937130020474C /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490837A290937130020474C /* ListView.swift */; };
+		0490837D290938CC0020474C /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490837C290938CC0020474C /* ListItemView.swift */; };
+		0490837F29093F2F0020474C /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490837E29093F2F0020474C /* AddView.swift */; };
+		04908381290942AC0020474C /* ListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04908380290942AC0020474C /* ListItemModel.swift */; };
+		04908383290A80420020474C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04908382290A80420020474C /* ListViewModel.swift */; };
+		04908385290C47CF0020474C /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04908384290C47CF0020474C /* EmptyListView.swift */; };
+		04908387290FB5B90020474C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04908386290FB5B90020474C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04908366290935130020474C /* ToDoListV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoListV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04908369290935130020474C /* ToDoListV2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListV2App.swift; sourceTree = "<group>"; };
-		0490836B290935130020474C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0490836D290935140020474C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04908370290935140020474C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0490837A290937130020474C /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		0490837C290938CC0020474C /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
+		0490837E29093F2F0020474C /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		04908380290942AC0020474C /* ListItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemModel.swift; sourceTree = "<group>"; };
+		04908382290A80420020474C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		04908384290C47CF0020474C /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
+		04908386290FB5B90020474C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04908388290FB6890020474C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +64,11 @@
 		04908368290935130020474C /* ToDoListV2 */ = {
 			isa = PBXGroup;
 			children = (
+				04908388290FB6890020474C /* Info.plist */,
 				04908369290935130020474C /* ToDoListV2App.swift */,
-				0490836B290935130020474C /* ContentView.swift */,
+				04908377290936CD0020474C /* Views */,
+				04908379290936EA0020474C /* ViewModels */,
+				04908378290936D40020474C /* Models */,
 				0490836D290935140020474C /* Assets.xcassets */,
 				0490836F290935140020474C /* Preview Content */,
 			);
@@ -65,6 +81,34 @@
 				04908370290935140020474C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		04908377290936CD0020474C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0490837A290937130020474C /* ListView.swift */,
+				0490837C290938CC0020474C /* ListItemView.swift */,
+				0490837E29093F2F0020474C /* AddView.swift */,
+				04908384290C47CF0020474C /* EmptyListView.swift */,
+				04908386290FB5B90020474C /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04908378290936D40020474C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				04908380290942AC0020474C /* ListItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		04908379290936EA0020474C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				04908382290A80420020474C /* ListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04908387290FB5B90020474C /* LaunchScreen.storyboard in Resources */,
 				04908371290935140020474C /* Preview Assets.xcassets in Resources */,
 				0490836E290935140020474C /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0490836C290935130020474C /* ContentView.swift in Sources */,
+				0490837F29093F2F0020474C /* AddView.swift in Sources */,
+				04908381290942AC0020474C /* ListItemModel.swift in Sources */,
+				04908385290C47CF0020474C /* EmptyListView.swift in Sources */,
+				04908383290A80420020474C /* ListViewModel.swift in Sources */,
+				0490837D290938CC0020474C /* ListItemView.swift in Sources */,
 				0490836A290935130020474C /* ToDoListV2App.swift in Sources */,
+				0490837B290937130020474C /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +320,12 @@
 				DEVELOPMENT_TEAM = 33HMVYSHMX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToDoListV2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Tododo;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -299,9 +352,12 @@
 				DEVELOPMENT_TEAM = 33HMVYSHMX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToDoListV2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Tododo;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
